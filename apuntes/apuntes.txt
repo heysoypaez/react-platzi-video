@@ -1,0 +1,31 @@
+Estoy empezando mi carrera como desarrollador React
+
+Hacer tweet de jquery a js y twittear a leonidas
+
+==
+
+React es una libreria para construir interfaces de usuario
+
+
+El dinamismo lo manejamos con js
+
+React es una solucion para interfaces super dinamicas
+
+¿Por qué Yo aprender React?
+
+crear aplicaciones con react es como jugar con legos
+
+
+==
+construiremos platzi video
+
+50% del proyecto lo haremos en el curso
+50% queda como un reto
+
+
+===
+
+Requitos:
+-instalar node
+- instalar npm
+- 
