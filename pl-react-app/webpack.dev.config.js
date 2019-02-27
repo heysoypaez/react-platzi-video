@@ -2,11 +2,11 @@ const path = require('path');
 
 module.exports = {
   entry: {
-    invie: path.resolve(__dirname, 'src/index.js'),
+    invie: path.resolve(__dirname, 'index.js'),
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'js/[name].js'
+    filename: 'js/platzi-video.js'
   },
   devServer: {
     port: 9000,

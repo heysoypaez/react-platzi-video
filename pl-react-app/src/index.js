@@ -7,7 +7,7 @@ Autor: Daniel Páez
 ==========================*/
 
 	import React from "react";
-	import ReactDOM from "react-dom";
+	import ReactDOM, { render } from "react-dom";
 	import Media from "./playlist/components/media";
 
 
@@ -30,7 +30,7 @@ Autor: Daniel Páez
 ====================*/
 
 	//ReactDOM.render(que Voy A Renderizar, donde lo hare en el DOM);
-	ReactDOM.render(<Media />, app);
+	render(<Media />, app);
 	//<Media /> asi sabe que es un componente
 
 	//Puedes renderizar un elemento de react o un componente de react
