@@ -29,3 +29,21 @@ Requitos:
 -instalar node
 - instalar npm
 - 
+
+
+===========
+
+Clase 2 react dom y jsx
+
+
+con
+npm install react react-dom --save
+
+
+el --save me lo guarda en el package.json
+
+
+
+¿Que es React DOM y para que me srive?
+
+¿Que es JSX y para que me sirve?
