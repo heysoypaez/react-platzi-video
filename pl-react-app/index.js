@@ -8,7 +8,7 @@ Autor: Daniel Páez
 
 	import React from "react";
 	import ReactDOM from "react-dom";
-	import Media from "./playlist/components/media";
+	import Media from "./src/playlist/components/media.js";
 
 
 /*INICIALIZACION DE ARCHIVO

@@ -40,7 +40,7 @@ Autor: Daniel Páez
 						/>
 					</div>
 
-					<h3>¿Por qué ser estoico?</h3>
+					<h3>La filosifía importa ¿Por qué ser estoico?</h3>
 					<p>Daniel Páez</p>
 				</div>
 				)
