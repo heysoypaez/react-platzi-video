@@ -9,6 +9,7 @@ Autor: Daniel Páez
 ==========================*/
 
 	import React, { Component } from "react"
+	import "./media.css"
 
 
 /*INICIALIZACION DE ARCHIVO
@@ -53,18 +54,24 @@ Autor: Daniel Páez
 
 		/*ESO ES JSX*/
 			return (
-			<div style={styles.container}>
-				<div>
+			<div className="Media">
+				<div className="Media-cover">
 					<div> 
 						<img src="./public/img/stoicism-cover.jpg"
 							 alt="Cover estoicismo" 
-							 width={"90%"}
+							 width="90%"
 							 height={160}
+							 className="Media-image"
 						/>
 					</div>
 
-					<h3>La filosofía importa ¿Por qué ser estoico?</h3>
-					<p style={author.styles}>Daniel Páez</p>
+					<h3 className="Media-title">
+					La filosofía importa ¿Por qué ser estoico?
+					</h3>
+
+					<p className="Media-author">
+					Daniel Páez
+					</p>
 				</div>
 			</div>
 				)
