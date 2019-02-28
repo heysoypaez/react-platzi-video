@@ -42,17 +42,25 @@ Autor: Daniel Páez
 	Esencia destilada para el blog
 	===============================
 	Puntos claves
-	//Siempre vamos a llamar a react
-	//Puedes organizar como quieras pero piensa en la arquitectura
-	
-	//Hay componentes
-	-funcional
-	-puro
-	-normal o clasico (Estado)
 
-	los archivos react .js no se autoejecuta, necesito llamarlo
-	
-	OJO: ,os nombres de los componentes empiezan en mayuscula
+		estilos con react
+	1. hojas de estilo
+	2. estilos en linea
+
+	container: {
+					fontSize: "14px",
+					fontColor: "red",
+					backgroundColor: "red",
+				}
+
+	estilos en js usamos camel case
+	quitamos el guion y ponemos mayuscula
+
+	sass + react js ? :O
+
+
+
+
 
 	Reflexion
 	=========
