@@ -30,34 +30,21 @@ Autor: Daniel Páez
 		//metodo principal
 		render() {
 
-			const styles = {
-				container: {
-					//por defecto react usa pixeles
-					// si quiero otra uso comillas
-					fontSize: 18,
-					color: "#eee",
-					fontFamily: "sans-serif",
-					backgroundColor: "red",
-					padding: "30px 10px 5px 10px",
-					cursor: "pointer",
-					width: 245,
-					height: `auto`,
-					border: "1px dashed white"
-				}
-			}
-
-			const author = {
-				styles: {
-					fontStyle: "italic",
-				}
-			}
+			
+			/*PROPS DE MI COMPONENTE
+			=========================*/
+			const {
+				image, 
+				title, 
+				author,
+			} = this.props;
 
 		/*ESO ES JSX*/
 			return (
 			<div className="Media">
 				<div className="Media-cover">
 					<div> 
-						<img src="./public/img/stoicism-cover.jpg"
+						<img src= {image}
 							 alt="Cover estoicismo" 
 							 width="90%"
 							 height={160}
@@ -65,13 +52,9 @@ Autor: Daniel Páez
 						/>
 					</div>
 
-					<h3 className="Media-title">
-					La filosofía importa ¿Por qué ser estoico?
-					</h3>
+					<h3 className="Media-title">{title}</h3>
 
-					<p className="Media-author">
-					Daniel Páez
-					</p>
+					<p className="Media-author">{author}</p>
 				</div>
 			</div>
 				)
@@ -93,10 +76,6 @@ export default Media;
 	=========
 	Me doy cuenta que en unas clases unos codigos me aportan valor pero en otras no tanto
 	Comenta mucho y despues leete y nivela, calibra
-
-
-
-
 
 
 

@@ -30,10 +30,18 @@ Autor: Daniel Páez
 ====================*/
 
 	//ReactDOM.render(que Voy A Renderizar, donde lo hare en el DOM);
-	ReactDOM.render(<Media />, app);
-	//<Media /> asi sabe que es un componente
+	ReactDOM.render(
 
-	//Puedes renderizar un elemento de react o un componente de react
+		<Media
+		 title= "¿Cúal es la pregunta más dificil qué te has hecho?"
+		 author="Daniel Páez"
+		 image= "./public/img/stoicism-cover.jpg"
+		 />
+
+		 , app
+	);
+
+	//<Media /> asi sabe que es un componente
 
 
 /*Notas mientras programo
@@ -43,23 +51,38 @@ Autor: Daniel Páez
 	===============================
 	Puntos claves
 
-		estilos con react
-	1. hojas de estilo
-	2. estilos en linea
+	En react a los atributos html que colocas con jsx no se les llama atributos
 
-	container: {
-					fontSize: "14px",
-					fontColor: "red",
-					backgroundColor: "red",
-				}
+	Sino propiedades
 
-	estilos en js usamos camel case
-	quitamos el guion y ponemos mayuscula
+	para colocar javascript dentro de componentes de react con jsx usa llaves
 
-	sass + react js ? :O
+	class Caja extends React.component {
+	
+	render() {
+	return (
+	<h1>{}</h1> //ALLI!!!
+	)
+	}
+	}
+
+	this.props.ta ta ta
+
+	es quien me permite pasarle propiedades al componente de react que voy a escoger al momento del render
+
+	puedes usar desestructuring y queda mejooor
 
 
+	¿Para una variable traida con props que no sea requerida, se puede definir un valor por defecto en caso de que no sea pasada?
 
+LeonidasEsteban
+LeonidasEsteban
+un año
+Si
+
+MyComponent.defaultProps = {
+	name: 'Leonidas'
+}
 
 
 	Reflexion
