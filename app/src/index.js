@@ -22,6 +22,7 @@ render(<Media
 	image="/img/stoicism-cover.jpg"
 	title = "Los principios vencen"
 	author = "Daniel Páez"
+	ticket = "Proximamente"
 
 	/>, app);
 

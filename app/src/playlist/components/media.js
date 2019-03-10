@@ -27,6 +27,42 @@ Autor: Daniel Páez
 	//Estamos creando una clase de js
 	class Media extends Component {
 
+/*
+		state = {
+			ticket: "Proximamente"
+		}
+*/
+
+
+		constructor(props) {
+			super(props) //recibiendo propiedades
+			this.state = {
+
+				 ticket: props.ticket
+			}
+
+		}
+
+		//Los arrow function heredan siempre el contexto de su padre
+		handleClick = (event) => {
+			
+			console.log(event)
+			/*Los estados son mutables, los props no*/
+
+			if (this.state.ticket === "Proximamente")
+			{
+				this.setState({
+				ticket: "Solo en Cines",
+				})
+			}
+			else {
+				this.setState({
+				ticket: "Proximamente",
+				})
+			}
+			
+		}
+
 		//metodo principal
 		render() {
 
@@ -36,12 +72,13 @@ Autor: Daniel Páez
 			const {
 				image, 
 				title, 
-				author,
+				author
 			} = this.props;
+
 
 		/*ESO ES JSX*/
 			return (
-			<div className="Media">
+			<div className="Media" onClick={this.handleClick}>
 				<div className="Media-cover">
 					<div> 
 						<img src= {image}
@@ -55,6 +92,7 @@ Autor: Daniel Páez
 					<h3 className="Media-title">{title}</h3>
 
 					<p className="Media-author">{author}</p>
+					<p className="Media-ticket">{this.state.ticket}</p>
 				</div>
 			</div>
 				)
