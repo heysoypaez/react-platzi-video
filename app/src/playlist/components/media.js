@@ -38,7 +38,8 @@ Autor: Daniel Páez
 			super(props) //recibiendo propiedades
 			this.state = {
 
-				 ticket: props.ticket
+				 ticket: props.ticket,
+				 mediaCover: " ",
 			}
 
 		}
@@ -61,6 +62,14 @@ Autor: Daniel Páez
 				})
 			}
 			
+		};
+
+		handleMouseEnter = (event) => {
+
+			alert("Oh God, you push your hand hover me")
+			this.setState({
+				mediaCover: "media-cover-hover"
+			})
 		}
 
 		//metodo principal
@@ -78,8 +87,14 @@ Autor: Daniel Páez
 
 		/*ESO ES JSX*/
 			return (
-			<div className="Media" onClick={this.handleClick}>
-				<div className="Media-cover">
+			<div className="Media" 
+				 onClick={this.handleClick}
+				 onMouseEnter={this.handleMouseEnter}
+				 onMouseLeave={this.handleMouseLeave}
+				 	 
+			>
+
+				<div className="Media-cover" className={this.state.mediaCover}>
 					<div> 
 						<img src= {image}
 							 alt="Cover estoicismo" 
