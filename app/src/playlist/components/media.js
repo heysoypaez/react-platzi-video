@@ -40,7 +40,11 @@ Autor: Daniel Páez
 
 				 ticket: props.ticket,
 				 mediaCover: " ",
+				 cta: " ",
 			}
+
+
+			
 
 		}
 
@@ -66,11 +70,26 @@ Autor: Daniel Páez
 
 		handleMouseEnter = (event) => {
 
-			alert("Oh God, you push your hand hover me")
+			//alert("Oh God, you push your hand hover me")
 			this.setState({
-				mediaCover: "media-cover-hover"
+				mediaCover: "media-cover-hover",
+				cta: "¿Quieres ver esta peli ahora?",
+
 			})
 		}
+
+		handleMouseLeave = (event) => {
+
+			//alert("Oh God, you push your hand hover me")
+			this.setState({
+				mediaCover: " ",
+				cta: " ",
+
+			})
+		}
+
+		
+
 
 		//metodo principal
 		render() {
@@ -109,6 +128,8 @@ Autor: Daniel Páez
 					<p className="Media-author">{author}</p>
 					<p className="Media-ticket">{this.state.ticket}</p>
 				</div>
+
+				<div className="Media-cta"> {this.state.cta} </div>
 			</div>
 				)
 		} 

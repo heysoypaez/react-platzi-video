@@ -6,6 +6,7 @@ body {
 
 		font-size: 18px;
 		color: #eee;
+		background-color: red;
 		font-family: sans-serif;
 		padding: 30px 10px 5px 10px;
 		cursor: pointer;
@@ -13,15 +14,21 @@ body {
 		height: auto;
 		border: 1px dashed white;
 		vertical-align: top;
-		display: block; 
+		display: block;
+		margin: 2% 2% 2% 2%; 
 
+}
+
+.Media-cta {
+	background-color: #ffff00;
+	color: #111;
 }
 
 
 
 
-.Media:hover .Media-cover {
-  box-shadow: 0 0 10px rgba(0,0,0,.3);
+.Media:hover .Media-cover:hover {
+  box-shadow: 10px 10px 30px #444;
 }
 
 .Media-cover {
@@ -30,7 +37,7 @@ body {
   height: 160px;
 }
 
-.Media-cover-hover 
+
 
 
 .Media-image {
@@ -39,14 +46,14 @@ body {
 
 .Media-title {
   margin: 5px 0 0 0;
-  color: #44546b;
+  color: #eee;
   white-space: normal;
 }
 
 .Media-author {
   font-size: 12px;
   margin: 5px 0 0 0;
-  color: #44546b ;
+  color: #eee ;
   font-style: italic;
 			
 }

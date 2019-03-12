@@ -1,0 +1,93 @@
+
+
+
+Los componentes en React tienen un ciclo de vida
+
+Referente a como entran en escena, como se comportan, como salen de escena
+
+Fases de un ciclo de vida en React
+
+1. Montado
+
+Es cuando un componente entrara en escena y lo renderizaremos
+
+Metodos claves en esta fase
+
+(aqui el componente aun no se ve)
+constructor()
+-colocar estado inicial
+-enlazar eventos con bind
+
+
+(aqui el componente aun no se ve)
+componentWillMount()
+1. Puedo hacer un setState
+2. No hacer llamados a APIs ni eventos
+
+
+(tiene la estructura a mostrar en pantalla)
+contiene todos los elementos a renderizar
+render()
+1. contiene jsx en el return
+2. puedes calcular propiedades
+
+
+
+
+(el componente ya esta en pantalla)
+componentDidMount
+
+1. Solo se lanza una vez
+2.Enlazar (bind) a eventos
+3. Primer metodo llamado al instanciar un componente
+4. llamar APIs
+
+
+
+2. Actualizacion
+
+
+componentWillReceiveProps 
+- metodo llamado al recibir nuevas propiedades
+- actualiza el estado con base a nuevas propiedades
+
+shouldComponentUpdate
+- metodo que condiciona si el componente se debe volver a renderizar
+- usado para optimizar el rendimiento
+
+componenteWillUpdate
+-metodo llamado antes de re-renderizar
+-usado para optimizar rendimiento
+
+render
+- re-render
+
+-componentDidUpdate
+- metodo llamado luego de re-render
+
+
+
+3. Desmontado
+
+
+componentWillUnmount
+-metodo llamado antes de retirar el componente de la aplicacion
+
+
+
+
+
+
+
+
+
+4. Manejo de errores
+
+nos permite manejar los errores de un solo componente sin romper toda la app
+
+componentDidCatch
+
+- si ocurre un error este metodo es invocado
+- el manejo de errores solo ocurre en componentes hijos
+
+
