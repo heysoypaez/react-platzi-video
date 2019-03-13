@@ -9,6 +9,7 @@ Autor: Daniel Páez
 ==========================*/
 
 	import React, { Component } from "react"
+	import PropTypes from "prop-types";
 	import "./media.css"
 
 
@@ -72,7 +73,7 @@ Autor: Daniel Páez
 
 			//alert("Oh God, you push your hand hover me")
 			this.setState({
-				mediaCover: "media-cover-hover",
+				cover: "media-cover-hover",
 				cta: "¿Quieres ver esta peli ahora?",
 
 			})
@@ -82,7 +83,7 @@ Autor: Daniel Páez
 
 			//alert("Oh God, you push your hand hover me")
 			this.setState({
-				mediaCover: " ",
+				cover: " ",
 				cta: " ",
 
 			})
@@ -98,7 +99,7 @@ Autor: Daniel Páez
 			/*PROPS DE MI COMPONENTE
 			=========================*/
 			const {
-				image, 
+				cover, 
 				title, 
 				author
 			} = this.props;
@@ -113,10 +114,10 @@ Autor: Daniel Páez
 				 	 
 			>
 
-				<div className="Media-cover" className={this.state.mediaCover}>
+				<div className="Media-cover" className={this.state.cover}>
 					<div> 
-						<img src= {image}
-							 alt="Cover estoicismo" 
+						<img src= {cover}
+							 alt="cover-playlist" 
 							 width="90%"
 							 height={160}
 							 className="Media-image"
@@ -136,6 +137,13 @@ Autor: Daniel Páez
 		//adentro contendra el html, la figura, el ui
 
 	}
+
+Media.propTypes = {
+	cover: PropTypes.string,
+	title: PropTypes.string.isRequired,
+	author: PropTypes.string,
+	type: PropTypes.oneOf(["audio", "video"]),
+}
 
 export default Media;
 

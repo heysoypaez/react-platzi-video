@@ -1,11 +1,13 @@
+En la vida todo nace, crece, se reproduce y muere
+
+*En React sucede igual*
 
 
+*Los componentes en React tienen un ciclo de vida*
 
-Los componentes en React tienen un ciclo de vida
+_Referente a como entran en escena, como se comportan, como salen de escena_
 
-Referente a como entran en escena, como se comportan, como salen de escena
-
-Fases de un ciclo de vida en React
+¿Cuales son las fases de ese ciclo de vida en React ?
 
 1. Montado
 
@@ -74,13 +76,6 @@ componentWillUnmount
 -metodo llamado antes de retirar el componente de la aplicacion
 
 
-
-
-
-
-
-
-
 4. Manejo de errores
 
 nos permite manejar los errores de un solo componente sin romper toda la app
@@ -89,5 +84,7 @@ componentDidCatch
 
 - si ocurre un error este metodo es invocado
 - el manejo de errores solo ocurre en componentes hijos
+
+
 
 

@@ -1,0 +1,16 @@
+
+.Playlist {
+
+	margin-left: 2%;
+	overflow-x: scroll;
+
+}
+
+.Playlist-content {
+
+	width: 2400px;
+	display: block;
+	margin: 2%;
+	overflow-x: hidden;
+	
+}

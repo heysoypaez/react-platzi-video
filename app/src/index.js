@@ -1,9 +1,11 @@
 import React from 'react';
 import ReactDOM, { render } from "react-dom";
 import './index.css';
-import Media from "./playlist/components/media";
+import SectionMedia from "./section-media.js";
 
 import App from './App';
+import data from "./api.json"
+
 import * as serviceWorker from './serviceWorker';
 
 
@@ -17,14 +19,7 @@ import * as serviceWorker from './serviceWorker';
 
 
 
-render(<Media 
-
-	image="/img/stoicism-cover.jpg"
-	title = "Los principios vencen"
-	author = "Daniel Páez"
-	ticket = "Proximamente"
-
-	/>, app);
+render(<SectionMedia />, app);
 
 
 // If you want your app to work offline and load faster, you can change
