@@ -8,7 +8,7 @@ Autor: Daniel Páez
 /*IMPORTACION DE RECURSOS
 ==========================*/
 
-	import React, { Component } from "react"
+	import React, { Component, PureComponent } from "react"
 	import PropTypes from "prop-types";
 	import "./media.css"
 
@@ -26,7 +26,7 @@ Autor: Daniel Páez
 
 
 	//Estamos creando una clase de js
-	class Media extends Component {
+	class Media extends PureComponent {
 
 /*
 		state = {
@@ -107,7 +107,7 @@ Autor: Daniel Páez
 
 		/*ESO ES JSX*/
 			return (
-			<div className="Media" 
+			<div className={`Media ${this.props.new}`} 
 				 onClick={this.handleClick}
 				 onMouseEnter={this.handleMouseEnter}
 				 onMouseLeave={this.handleMouseLeave}
@@ -158,6 +158,14 @@ export default Media;
 	=========
 	Me doy cuenta que en unas clases unos codigos me aportan valor pero en otras no tanto
 	Comenta mucho y despues leete y nivela, calibra
+
+
+
+
+¿Pure component? ¿Que es ? ¿Que valor me aporta?
+
+
+Pure component actualiza automaticamnete sin escribir un shouldComponentUpdate
 
 
 

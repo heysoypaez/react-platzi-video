@@ -1,72 +1,63 @@
-import React, {Component} from "react";
-import PropTypes from "prop-types";
-import Media from "./components/media.js";
-import "./playlist.css"
 
-class Playlist extends Component {
-	render() {
+	//Elige tus batallas, Si no hace falta un ciclo de vida usa un componente funcional
 
-		const {data} = this.props
-		console.log(data);
-		const {categories} = data;
-		
-
-		const  renderPlaylist = (i) => {
-
-				let playlist;
-				
-				playlist = categories[i].playlist 
-
-				return(
-					<section>
-
-						 {		
-						 	playlist.map( (item) => {
-						 		return <Media 
-						 		{...item}
-						 		key = {item.id}
+/*Imports
+===========*/
+	import React from "react";
+	import PropTypes from "prop-types";
+	import Media from "./components/media.js";
+	import "./playlist.css"
 
 
-						 		 />
-						 	})
-						 }
+/*Functional component
+=======================*/
+
+	function Playlist(data, id) {
+			
+			/*Verificacion de la data
+			=========================*/
+			console.log(data.categories[id]);
+
+			/*Variables
+			============*/
+			const {categories} = data;
+			
+			/*Declaración de funciones
+			===============================*/
+			const renderPlaylist = (i) => {
+
+					let dataPlaylist = categories[i].playlist 
+
+					const getDataAndRender = (item) => <Media {...item} key = {item.id} />
+
+					return dataPlaylist.map(getDataAndRender)				
+			}
+			                               
+
+			return(
+				<div className="Playlist">
+					<header className="Playlist-header">
+						<h1>{categories[id].title}</h1>
+					</header>
+
+					<section className="Playlist-content">
+						
+						{renderPlaylist(id)}
+						
+						<Media 
+						title="Agrega tu nueva Media a la lista"
+						new= "Media-new"
+						cover="./images/covers/question-mark.png"
+						author="Tú"
+						/>
+
 					</section>
-				)
-		}
-
-
-		//Props
-		const {
-			id
-		} = this.props
-		
-		
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
-		return(
-			<div className="Playlist">
-				<header className="Playlist-header">
-					<h1>{categories[id].title}</h1>
-				</header>
-
-				<section className="Playlist-content">
-				{renderPlaylist(id)}
-				</section>
-			</div>
-
-		)
+				</div>
+			)
 	}
-}
-
-//todo componente debe exportar algo
-export default Playlist
 
 
+/*Exports
+===========*/
 
-/*Reto
-
-crear a cada componente su hoja de stilos
-
-usar la teoria de listas para imprimir las otras categorias
-
-
-*/
+	export default Playlist

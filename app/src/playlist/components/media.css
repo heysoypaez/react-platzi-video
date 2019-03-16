@@ -16,6 +16,20 @@
 
 }
 
+.Media-new {
+
+	background-color: white;
+	border: 1px dashed red;
+	color: black;
+
+}
+
+
+.Media-new h3 {
+	color: black;
+
+}
+
 .Media-cta {
 	background-color: #ffff00;
 	color: #111;

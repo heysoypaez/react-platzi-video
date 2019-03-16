@@ -25,23 +25,12 @@ class SectionMedia extends Component {
 
 		return(
 			<div>
-				<h1> Hola </h1>
+				<h1> Vive la música, es parte de tus momentos importantes </h1>
 
-				<Playlist 
-					data={data}
-					id={0}
-				 />
-
-				<Playlist
-					data={data}
-					id={1}
-				 />
-
-
-				<Playlist 
-					data={data} 
-					id={2}
-				/>
+				{Playlist(data,0)}
+				{Playlist(data,1)}
+				{Playlist(data,2)}
+			
 			</div>
 
 			) 
