@@ -33,4 +33,11 @@ las funciones igual reciben props, lo que no reciben es un estado
 
 MI DESAFIO
 hacer la composicion del resto de iconos pausa, expand en base al componente icon
+
+Los iconos a los cuales trabajar son:
+- full-screen
+- pause
+- volume
+
+
 */

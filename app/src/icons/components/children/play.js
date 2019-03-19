@@ -1,5 +1,5 @@
 import React from "react";
-import Icon from "./icon.js";
+import Icon from "../icon.js";
 
 function Play(props) {
 	return(

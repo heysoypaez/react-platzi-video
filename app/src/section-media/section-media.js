@@ -11,8 +11,8 @@ Autor: Daniel Páez
 	import React, { Component } from "react"
 	import PropTypes from "prop-types";
 	//import "./section-media.css"
-	import Playlist from "./playlist/playlist.js"
-	import data from "./api.json"
+	import Playlist from "./components/playlist/playlist.js"
+	import data from "../api.json"
 	import "./section-media.css"
 
 
@@ -25,7 +25,7 @@ class SectionMedia extends Component {
 
 		return(
 			<div>
-				<h1> Vive la música, es parte de tus momentos importantes </h1>
+				<h1> Vive la música, es parte de lo genial de tu vida </h1>
 
 				{Playlist(data,0)}
 				{Playlist(data,1)}

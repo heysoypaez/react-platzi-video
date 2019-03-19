@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM, { render } from "react-dom";
 import './index.css';
-import SectionMedia from "./section-media.js";
+import SectionMedia from "./section-media/section-media.js";
 
 import App from './App';
 import data from "./api.json"

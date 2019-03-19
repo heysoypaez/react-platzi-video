@@ -13,6 +13,13 @@ Autor: Daniel Páez
 	import "./media.css"
 
 
+	import Play from "../../../../icons/components/children/play.js"
+	import Pause from "../../../../icons/components/children/pause.js"
+	import Volume from "../../../../icons/components/children/volume.js"
+	import FullScreen from "../../../../icons/components/children/full-screen.js"
+
+
+
 /*INICIALIZACION DE ARCHIVO
 ============================*/
 
@@ -44,6 +51,7 @@ Autor: Daniel Páez
 				 cta: " ",
 			}
 
+			this.IconsSize = 30;
 
 			
 
@@ -104,6 +112,8 @@ Autor: Daniel Páez
 				author
 			} = this.props;
 
+			const {IconsSize} = this;
+
 
 		/*ESO ES JSX*/
 			return (
@@ -127,6 +137,34 @@ Autor: Daniel Páez
 					<h3 className="Media-title">{title}</h3>
 
 					<p className="Media-author">{author}</p>
+
+
+					<Play
+						size={IconsSize}
+						color="pink"
+					/>
+
+
+					<Pause
+						size={IconsSize}
+						color="pink"
+					/>
+
+
+					<Volume
+						size={IconsSize}
+						color="pink"
+					/>
+
+
+					<FullScreen
+						size={IconsSize}
+						color="pink"
+					/>
+
+
+
+
 					<p className="Media-ticket">{this.state.ticket}</p>
 				</div>
 
