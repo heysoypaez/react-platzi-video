@@ -7,6 +7,7 @@
 	import PropTypes from "prop-types";
 	import Media from "./components/media.js";
 	import "./playlist.css"
+	import Play from "../icons/components/play.js"
 
 
 /*Functional component
@@ -39,6 +40,11 @@
 					<header className="Playlist-header">
 						<h1>{categories[id].title}</h1>
 					</header>
+
+					<Play
+						size={70}
+						color="blue"
+					/>
 
 					<section className="Playlist-content">
 						

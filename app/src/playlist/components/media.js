@@ -169,4 +169,43 @@ Pure component actualiza automaticamnete sin escribir un shouldComponentUpdate
 
 
 
+
+
+como se ve vs que hce
+
+
+Smart components
+
+dumbs components
+
+mis componentes
+
+
+Dumb components
+
+- Es  un componente de UI
+- Es un componente presentacional
+- Estan escritos como componentes funcionales, a menos que performance diga lo conntrario
+- Puede contener smart components  y dumb components
+- No especifica como los datos son cargados o mutados 
+- Recibira datos y callbacks por props
+- 99% componentes ffuncionales, 1% pure componentes
+
+
+Containers
+
+- sin estilos
+- concentrado en la logica de la app
+- proveen de datos a ui y otros contenedores
+-  suelen tener estado
+- proveen callbacks
+- generados por higher order components
+- llaman acciones
+
+
+
+- separacion de responsabilides
+- mejorar cp de reutilizacion
+
+
  */
