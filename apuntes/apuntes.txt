@@ -47,3 +47,23 @@ el --save me lo guarda en el package.json
 ¿Que es React DOM y para que me srive?
 
 ¿Que es JSX y para que me sirve?
+
+
+
+
+
+
+
+
+
+
+
+
+===
+
+
+Principios claves:
+
+manejar responsabilidades
+
+crear independencia

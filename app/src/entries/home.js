@@ -1,9 +1,6 @@
 import React from 'react';
 import ReactDOM, { render } from "react-dom";
-import './index.css';
-
-import Home from "./pages/containers/home.js"
-
+import './home.css';
 import SectionMedia from "./section-media/section-media.js";
 
 import data from "./api.json"
@@ -21,8 +18,7 @@ import * as serviceWorker from './serviceWorker';
 
 
 
-//render(<SectionMedia />, app);
-render(<Home />, app);
+render(<SectionMedia />, app);
 
 
 // If you want your app to work offline and load faster, you can change
