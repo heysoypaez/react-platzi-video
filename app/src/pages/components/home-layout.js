@@ -1,13 +1,11 @@
 import React from "react";
+import "./home-layout.css";
 
 function HomeLayout(props) {
 	// body...
 	return(
 
-		<section> 
-			<h1>Home Layout</h1>
-			<p>Daniell</p>
-
+		<section class="HomeLayout"> 
 			{props.children}
 		</section>
 

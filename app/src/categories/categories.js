@@ -12,7 +12,10 @@ Autor: Daniel Páez
 	import PropTypes from "prop-types";
 	//import "./section-media.css"
 	import Playlist from "./components/playlist/playlist.js"
-	import data from "../api.json"
+	import data from "../api.json";
+
+	//Styles
+	import "./categories.css";
 
 
 
@@ -20,7 +23,7 @@ Autor: Daniel Páez
 function Categories() {
 
 	return(
-		<div>
+		<section class="Categories">
 			<h1> Vive la música, es parte de lo genial de tu vida </h1>
 
 			{Playlist(data,0)}
@@ -33,7 +36,7 @@ function Categories() {
 				} )
 			*/}
 		
-		</div>
+		</section>
 
 		) 
 }
