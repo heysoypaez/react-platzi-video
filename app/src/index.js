@@ -2,11 +2,7 @@ import React from 'react';
 import ReactDOM, { render } from "react-dom";
 import './index.css';
 
-import Home from "./pages/containers/home.js"
-
-import SectionMedia from "./section-media/section-media.js";
-
-import data from "./api.json"
+import Home from "./pages/containers/home.js";
 
 import * as serviceWorker from './serviceWorker';
 

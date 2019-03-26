@@ -152,5 +152,13 @@
         }
       ]
     }
-  ]
+  ],
+  
+  "brand": {
+
+    "logo": "./imageslogo.png"
+  
+  }
+
+    
 }
