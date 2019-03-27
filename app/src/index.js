@@ -13,12 +13,12 @@ import * as serviceWorker from './serviceWorker';
 	/*Selectores
 	============*/
 
-		const app = document.getElementById("root")
+		const homeContainer = document.getElementById("home-container")
 
 
 
 //render(<SectionMedia />, app);
-render(<Home />, app);
+render(<Home />, homeContainer);
 
 
 // If you want your app to work offline and load faster, you can change

@@ -23,7 +23,7 @@ Autor: Daniel Páez
 function Categories() {
 
 	return(
-		<section class="Categories">
+		<section className="Categories">
 			<h1> Vive la música, es parte de lo genial de tu vida </h1>
 
 			{Playlist(data,0)}

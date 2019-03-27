@@ -7,7 +7,7 @@ function Related(props) {
 
 	
 	return(
-		<section class="Related">
+		<section className="Related">
 			<img src={logo} width={250} />
 		</section>
 	)

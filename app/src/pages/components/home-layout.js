@@ -5,7 +5,7 @@ function HomeLayout(props) {
 	// body...
 	return(
 
-		<section class="HomeLayout"> 
+		<section className="HomeLayout"> 
 			{props.children}
 		</section>
 
