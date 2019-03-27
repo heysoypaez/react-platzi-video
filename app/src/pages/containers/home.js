@@ -3,9 +3,31 @@ import HomeLayout from "../components/home-layout.js"
 import Categories from "../../categories/categories.js";
 import Related from "../components/related.js";
 import Modal from "../../modal/containers/modal.js";
+import ModalLayout from "../../modal/components/modal-layout.js";
+
 
 
 class Home extends Component {
+
+	state = {
+		modalVisible: false,
+	}
+
+	handleOpenModal = (event) => {
+		
+		this.setState({
+			modalVisible: true,
+
+		})		
+	}
+
+	handleCloseModal = (event) => {
+
+		this.setState({
+			modalVisible: false,
+
+		})
+	}
 
 	render() {
 
@@ -14,13 +36,29 @@ class Home extends Component {
 
 			<HomeLayout> 	
 
-				<Modal> 
-					<h2> El MAN está vivo </h2>
-				</Modal> 
+				{
+					this.state.modalVisible &&
+					<Modal>
+
+						<ModalLayout
+
+						handleClick={this.handleCloseModal}
+						handleOpenModal={this.handleOpenModal}
+
+						>
+							<h2> El MAN está vivo </h2>
+						</ModalLayout> 			
+					</Modal> 
+					
+				}
 
 
 				<Related />
-				<Categories />
+				<Categories
+
+				categories={this.props.data.categories}
+
+				 />
 			
 
 			 </HomeLayout>
@@ -32,4 +70,4 @@ class Home extends Component {
 export default Home
 
 
-//				{/*Recuerda que este elemento recibe lo que le mandemos como hijos*/}
+//{/*Recuerda que este elemento recibe lo que le mandemos como hijos*/}

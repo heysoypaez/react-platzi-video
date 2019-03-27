@@ -12,38 +12,27 @@
 /*Functional component
 =======================*/
 
-	function Playlist(data, id) {
-			
-			/*Verificacion de la data
-			=========================*/
-			console.log(data.categories[id]);
-
-			/*Variables
-			============*/
-			const {categories} = data;
-			
-			/*Declaración de funciones
-			===============================*/
-			const renderPlaylist = (i) => {
-
-					let dataPlaylist = categories[i].playlist 
-
-					const getDataAndRender = (item) => <Media {...item} key = {item.id} />
-
-					return dataPlaylist.map(getDataAndRender)				
-			}
+	function Playlist(props) {
 			                               
 
 			return(
 				<div className="Playlist">
-					<header className="Playlist-header">
-						<h1>{categories[id].title}</h1>
-					</header>
+
 
 					<section className="Playlist-content">
 						
-						{renderPlaylist(id)}
-						
+						{
+						props.playlist.map( item => {
+							return (
+
+							 <Media
+								 {...item /*iterando props sobre playlist*/}
+								 key={item.id}
+							  />
+							   )
+						})
+						}
+
 						<Media 
 						title="Agrega tu nueva Media a la lista"
 						new= "Media-new"
@@ -55,9 +44,5 @@
 				</div>
 			)
 	}
-
-
-/*Exports
-===========*/
 
 	export default Playlist

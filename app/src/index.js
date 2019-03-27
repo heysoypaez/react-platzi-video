@@ -4,6 +4,8 @@ import './index.css';
 
 import Home from "./pages/containers/home.js";
 
+import data from "./api.json";
+
 import * as serviceWorker from './serviceWorker';
 
 
@@ -18,7 +20,7 @@ import * as serviceWorker from './serviceWorker';
 
 
 //render(<SectionMedia />, app);
-render(<Home />, homeContainer);
+render(<Home data={data} />, homeContainer);
 
 
 // If you want your app to work offline and load faster, you can change

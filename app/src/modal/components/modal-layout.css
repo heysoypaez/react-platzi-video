@@ -1,0 +1,15 @@
+.Modal {
+
+	position: fixed;
+
+	top: 20vh;
+	left:20vw;
+	right: 20vw;
+
+	padding: 10%;
+	background-color: white;
+
+	border: solid black 1px;
+
+
+}

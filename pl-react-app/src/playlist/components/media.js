@@ -1,31 +1,11 @@
-
-
-/*
-Autor: Daniel Páez
-
-*/
-
 /*IMPORTACION DE RECURSOS
 ==========================*/
 
-	import React, { Component } from "react"
+	import React, { PureComponent } from "react"
 	import "./media.css"
 
 
-/*INICIALIZACION DE ARCHIVO
-============================*/
-
-	console.log("Media JS aqui");
-
-
-/*DECLARACION DE COMPONENTES
-============================*/
-
-	//Estoy creando un componente chiquito que llamaremos media
-
-
-	//Estamos creando una clase de js
-	class Media extends Component {
+class Media extends PureComponent {
 
 		//metodo principal
 		render() {
@@ -41,7 +21,7 @@ Autor: Daniel Páez
 
 		/*ESO ES JSX*/
 			return (
-			<div className="Media">
+			<div className="Media" onClick={this.props.handleClick}>
 				<div className="Media-cover">
 					<div> 
 						<img src= {image}
@@ -59,24 +39,6 @@ Autor: Daniel Páez
 			</div>
 				)
 		} 
-		//adentro contendra el html, la figura, el ui
-
-	}
+}
 
 export default Media;
-
-/*REACT RENDER
-====================*/
-
-
-/*Notas mientras programo
-=========================
-	
-	Reflexion
-	=========
-	Me doy cuenta que en unas clases unos codigos me aportan valor pero en otras no tanto
-	Comenta mucho y despues leete y nivela, calibra
-
-
-
- */
