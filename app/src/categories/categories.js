@@ -1,13 +1,4 @@
 
-
-/*
-Autor: Daniel Páez
-
-*/
-
-/*IMPORTACION DE RECURSOS
-==========================*/
-
 	import React, { Component } from "react";
 	import PropTypes from "prop-types";
 	import Playlist from "./components/playlist/playlist.js";
@@ -37,6 +28,7 @@ function Categories(props) {
 					return (
 
 						<Category 
+							handleOpenModal={props.handleOpenModal}
 							key={item.id}
 							{...item}
 							

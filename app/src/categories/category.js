@@ -1,13 +1,4 @@
 
-
-/*
-Autor: Daniel Páez
-
-*/
-
-/*IMPORTACION DE RECURSOS
-==========================*/
-
 	import React, { Component } from "react";
 	import PropTypes from "prop-types";
 	import Playlist from "./components/playlist/playlist.js";	
@@ -26,7 +17,8 @@ function Category(props) {
 				<section className="Category-section">
 
 					<Playlist
-				 		 playlist={props.playlist}
+						 handleOpenModal={props.handleOpenModal}
+				 		 playlist={props.playlist} 			
 				 	 />
 				 			
 				</section>

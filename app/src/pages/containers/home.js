@@ -36,6 +36,17 @@ class Home extends Component {
 
 			<HomeLayout> 	
 
+
+				<Related />
+				<Categories
+
+				handleOpenModal={this.handleOpenModal}
+				categories={this.props.data.categories}
+
+
+				 />
+				
+			
 				{
 					this.state.modalVisible &&
 					<Modal>
@@ -43,7 +54,7 @@ class Home extends Component {
 						<ModalLayout
 
 						handleClick={this.handleCloseModal}
-						handleOpenModal={this.handleOpenModal}
+						
 
 						>
 							<h2> El MAN está vivo </h2>
@@ -52,14 +63,6 @@ class Home extends Component {
 					
 				}
 
-
-				<Related />
-				<Categories
-
-				categories={this.props.data.categories}
-
-				 />
-			
 
 			 </HomeLayout>
 		)
