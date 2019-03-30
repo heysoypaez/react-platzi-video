@@ -4,6 +4,7 @@ import Categories from "../../categories/categories.js";
 import Related from "../components/related.js";
 import Modal from "../../modal/containers/modal.js";
 import ModalLayout from "../../modal/components/modal-layout.js";
+import HandleError  from "../../errors/containers/handle-error.js"
 
 
 
@@ -11,13 +12,13 @@ class Home extends Component {
 
 	state = {
 		modalVisible: false,
+		handleError: false,
 	}
 
 	handleOpenModal = (event) => {
 		
 		this.setState({
 			modalVisible: true,
-
 		})		
 	}
 
@@ -25,7 +26,6 @@ class Home extends Component {
 
 		this.setState({
 			modalVisible: false,
-
 		})
 	}
 
@@ -33,17 +33,13 @@ class Home extends Component {
 
 		return(
 
-
+			<HandleError>
 			<HomeLayout> 	
-
 
 				<Related />
 				<Categories
-
 				handleOpenModal={this.handleOpenModal}
 				categories={this.props.data.categories}
-
-
 				 />
 				
 			
@@ -52,10 +48,7 @@ class Home extends Component {
 					<Modal>
 
 						<ModalLayout
-
 						handleClick={this.handleCloseModal}
-						
-
 						>
 							<h2> El MAN está vivo </h2>
 						</ModalLayout> 			
@@ -65,6 +58,7 @@ class Home extends Component {
 
 
 			 </HomeLayout>
+			</HandleError>
 		)
 	}
 

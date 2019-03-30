@@ -1,6 +1,6 @@
 
 
-.Modal {
+.HandleError {
 
 	position: fixed;
 
@@ -11,9 +11,7 @@
 	padding: 10%;
 	background-color: white;
 
-	border: solid black 1px;
-	text-align: center;
-	justify-content: center;
+	border: solid red 1px;
 
 
 }
