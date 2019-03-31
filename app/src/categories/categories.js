@@ -2,6 +2,7 @@
 	import React, { Component } from "react";
 	import PropTypes from "prop-types";
 	import Playlist from "./components/playlist/playlist.js";
+	import Searcher from "../widgets/containers/searcher.js"
 	
 	//Styles
 	import "./categories.css";
@@ -21,8 +22,10 @@ function Categories(props) {
 		</header>
 
 		<section className="Categories-section">
+
+			<Searcher />
 			
-			{
+			{ 
 				props.categories.map( item => { 
 
 					return (
@@ -30,16 +33,13 @@ function Categories(props) {
 						<Category 
 							handleOpenModal={props.handleOpenModal}
 							key={item.id}
-							{...item}
-							
-							
+							{...item}		
 						/>
 					)
+				})
+			}
 
-			}
-				
-				)
-			}
+			<Searcher />
 		</section>
 		</div>
 
