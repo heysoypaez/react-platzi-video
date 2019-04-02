@@ -1,11 +1,18 @@
-import React, {Component} from "react";
-import HomeLayout from "../components/home-layout.js"
-import Categories from "../../categories/categories.js";
-import Related from "../components/related.js";
-import Modal from "../../modal/containers/modal.js";
-import ModalLayout from "../../modal/components/modal-layout.js";
-import HandleError  from "../../errors/containers/handle-error.js"
+//IMPORTS
 
+	import React, {Component} from "react";
+
+	import HomeLayout from "../components/home-layout.js"
+
+	import Categories from "../../categories/categories.js";
+	import Related from "../components/related.js";
+
+	import Modal from "../../modal/containers/modal.js";
+	import ModalLayout from "../../modal/components/modal-layout.js";
+
+	import HandleError  from "../../errors/containers/handle-error.js"
+
+	import VideoPlayer from "../../player/containers/video-player.js";
 
 
 class Home extends Component {
@@ -50,6 +57,7 @@ class Home extends Component {
 						<ModalLayout
 						handleClick={this.handleCloseModal}
 						>
+							<VideoPlayer />
 							<h2> El MAN está vivo </h2>
 						</ModalLayout> 			
 					</Modal> 
