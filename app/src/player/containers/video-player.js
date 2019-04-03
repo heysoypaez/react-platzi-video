@@ -1,6 +1,7 @@
 import React , {Component} from "react";
 import VideoPlayerLayout from "../components/video-player-layout.js";
-
+import Video from "../components/video.js";
+import Title from "../components/title.js";
 
 class VideoPlayer  extends Component {
 
@@ -10,11 +11,12 @@ class VideoPlayer  extends Component {
 
 		return(
 			<VideoPlayerLayout>
+				<Title title="Crea cambio relevante" />
+				<Video 
+				autoplay = {true}
+				src="http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4"
 
-				<video
-				 controls
-				 src="http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4"
-				 />
+				/>
 			</VideoPlayerLayout>
 		)
 	}
