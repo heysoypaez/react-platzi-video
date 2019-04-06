@@ -5,15 +5,23 @@
 	position: fixed;
 
 	top: 20vh;
+	bottom: 20vh;
 	left:20vw;
 	right: 20vw;
 
-	padding: 10%;
+	padding: 5%;
 	background-color: white;
 
 	border: solid black 1px;
 	text-align: center;
 	justify-content: center;
+	vertical-align: top;
 
+	display: grid;
 
+}
+
+.Modal-close {
+	background-color: red;
+	color: white;
 }

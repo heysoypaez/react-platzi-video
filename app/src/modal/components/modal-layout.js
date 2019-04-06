@@ -7,10 +7,9 @@ function ModalLayout(props) {
 
 		<section className="Modal">
 
-		<h1>Oiga hermano, acá hay una ventanita Modal </h1>
-
+	
 		{props.children}
-		<button onClick={props.handleClick}>X</button>
+		<button className="Modal-close" onClick={props.handleClick}>X</button>
 		</section>
 
 	)

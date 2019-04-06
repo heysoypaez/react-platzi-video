@@ -57,8 +57,10 @@ class Home extends Component {
 						<ModalLayout
 						handleClick={this.handleCloseModal}
 						>
-							<VideoPlayer />
-							<h2> El MAN está vivo </h2>
+							<VideoPlayer
+								autoplay= {true}
+							 />
+				
 						</ModalLayout> 			
 					</Modal> 
 					
