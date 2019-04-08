@@ -1,12 +1,18 @@
-import React , {Component} from "react";
+import React , {PureComponent} from "react";
 import "./video.css";
 
 
 
-class Video  extends Component {
+class Video  extends PureComponent {
 
-	//This.video es el elemtno html
 
+
+	setRef = element => {
+
+		//This.video es el elemtno html
+		this.video = element;
+	}
+	
 	togglePlay() {
 
 		if (this.props.pause) {
@@ -22,26 +28,37 @@ class Video  extends Component {
 
 	componentDidUpdate(nextProps) {
 
+		/*Ese nuevo Prop lo envia el usuario*/
 		if(nextProps.pause !== this.props.pause) {
 
 			this.togglePlay();
 		}
 	}
 
-	setRef = element => {
-		this.video = element;
-	}
+
+
 
 	render() {
+
+		const {
+
+			handleLoadedMetadata
+
+		} = this.props
 
 		return(	
 
 			<section className="Video">
 			
 				<video
+				 ref={this.setRef}
 				 autoPlay = {this.props.autoplay}
 				 src={this.props.src}
-				 ref={this.setRef}
+				 
+
+				 //Este metodo que estoy llamando es un evento del objeto html media
+				 onLoadedMetadata = {handleLoadedMetadata}
+
 				 />
 
 			</section>
@@ -52,3 +69,12 @@ class Video  extends Component {
 
 export default Video;
 
+/*
+Necesito obtener la referencia del video propio del html que esta
+ en el componente video para usarlo en el contenedor del video
+
+ Para guardarlo como una variable
+
+ Y usar sus metodos
+
+*/
