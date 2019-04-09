@@ -1,6 +1,7 @@
 import React from "react";
 import "./timer.css";
 
+
 const Timer = (props) => {
 
 
@@ -10,7 +11,9 @@ const Timer = (props) => {
 		<section className="Timer">
 
 			<p>
-				<span>0 / {props.duration} </span>
+
+
+				<span>{props.currentTime}  /  {props.duration} </span>
 
 			</p> 
 

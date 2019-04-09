@@ -2,6 +2,11 @@ import React , {PureComponent} from "react";
 import "./video.css";
 
 
+/*
+Dar 50.000 efectivo
+Mandarte 100.000 a la cuenta
+*/
+
 
 class Video  extends PureComponent {
 
@@ -42,7 +47,8 @@ class Video  extends PureComponent {
 
 		const {
 
-			handleLoadedMetadata
+			handleLoadedMetadata,
+			handleTimeUpdate
 
 		} = this.props
 
@@ -58,6 +64,7 @@ class Video  extends PureComponent {
 
 				 //Este metodo que estoy llamando es un evento del objeto html media
 				 onLoadedMetadata = {handleLoadedMetadata}
+				 onTimeUpdate = {handleTimeUpdate}
 
 				 />
 
