@@ -1,10 +1,15 @@
 import React , {Component} from "react";
+
 import VideoPlayerLayout from "../components/video-player-layout.js";
+
 import Video from "../components/video.js";
 import Title from "../components/title.js";
+
+import Controls from "../components/video-player-controls.js";
+
 import PlayPause  from "../components/play-pause.js";
 import Timer  from "../components/timer.js";
-import Controls from "../components/video-player-controls.js"
+import ProgressBar from "../components/progress-bar.js"
 
 import formattedTime from "../../utilities/utilities.js"
 
@@ -65,6 +70,10 @@ class VideoPlayer  extends Component {
 		})
 	}
 
+	handleProgressChange = event => {
+		this.video.currentTime = event.target.value
+	}
+
 
 	render() {
 
@@ -83,15 +92,23 @@ class VideoPlayer  extends Component {
 
 				<Controls>
 
+					<PlayPause 
+						handleClick = {this.handleToggleClickPlayPause}
+						pause = {this.state.pause}
+					/>
+
 					<Timer 
 						duration = {this.state.durationFormatted}
 						currentTime = {this.state.currentTimeFormatted}
 					/>
 
-					<PlayPause 
-						handleClick = {this.handleToggleClickPlayPause}
-						pause = {this.state.pause}
-					/>
+					<ProgressBar
+						duration = {this.state.duration}
+						value = {this.state.currentTime}
+						handleProgressChange = {this.handleProgressChange} 
+					 />
+
+				
 
 				</Controls>
 
