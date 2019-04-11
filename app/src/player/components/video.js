@@ -48,7 +48,9 @@ class Video  extends PureComponent {
 		const {
 
 			handleLoadedMetadata,
-			handleTimeUpdate
+			handleTimeUpdate,
+			handleSeeking,
+			handleSought
 
 		} = this.props
 
@@ -60,6 +62,9 @@ class Video  extends PureComponent {
 				 ref={this.setRef}
 				 autoPlay = {this.props.autoplay}
 				 src={this.props.src}
+
+				 onSeeking={handleSeeking}
+				 onSeeked={handleSought}
 				 
 
 				 //Este metodo que estoy llamando es un evento del objeto html media

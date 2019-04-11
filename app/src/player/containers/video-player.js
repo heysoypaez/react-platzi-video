@@ -9,7 +9,8 @@ import Controls from "../components/video-player-controls.js";
 
 import PlayPause  from "../components/play-pause.js";
 import Timer  from "../components/timer.js";
-import ProgressBar from "../components/progress-bar.js"
+import ProgressBar from "../components/progress-bar.js";
+import Spinner from "../components/spinner.js";
 
 import formattedTime from "../../utilities/utilities.js"
 
@@ -25,7 +26,9 @@ class VideoPlayer  extends Component {
 		durationFormatted: 0,
 
 		currentTime: 0,
-		currentTimeFormatted: 0
+		currentTimeFormatted: 0,
+
+		loading: false
 	}	
 
 
@@ -74,6 +77,23 @@ class VideoPlayer  extends Component {
 		this.video.currentTime = event.target.value
 	}
 
+	//Video start loading
+	handleSeekingVideo = event => {
+
+		this.setState({
+			loading: true
+		})
+	}
+
+	// Video stop loading
+	handleSoughtdVideo = event => {
+
+
+		this.setState({
+			loading: false
+		})
+		
+	}
 
 	render() {
 
@@ -88,6 +108,9 @@ class VideoPlayer  extends Component {
 				pause= {this.state.pause}
 				handleLoadedMetadata = {this.handleLoadedMetadata}
 				handleTimeUpdate = {this.handleTimeUpdate}
+				handleSeeking = {this.handleSeekingVideo}
+				handleSought = {this.handleSoughtVideo}
+
 				/>
 
 				<Controls>
@@ -111,6 +134,11 @@ class VideoPlayer  extends Component {
 				
 
 				</Controls>
+
+				<Spinner 
+				active={this.state.loading}
+				/>
+
 
 			</VideoPlayerLayout>
 		)
