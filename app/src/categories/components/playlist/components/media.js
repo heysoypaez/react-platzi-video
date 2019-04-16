@@ -3,11 +3,7 @@
 	import PropTypes from "prop-types";
 	import "./media.css"
 
-	import Play from "../../../../icons/components/children/play.js"
-	import Pause from "../../../../icons/components/children/pause.js"
-	import Volume from "../../../../icons/components/children/volume.js"
-	import FullScreen from "../../../../icons/components/children/full-screen.js"
-
+	
 
 	//Estoy creando un componente chiquito que llamaremos media
 	class Media extends PureComponent {
@@ -82,27 +78,6 @@
 					<h3 className="Media-title">{title}</h3>
 
 					<p className="Media-author">{author}</p>
-
-
-					<Play
-						size={IconsSize}
-						color="pink"
-					/>
-
-					<Pause
-						size={IconsSize}
-						color="pink"
-					/>
-
-					<Volume
-						size={IconsSize}
-						color="pink"
-					/>
-
-					<FullScreen
-						size={IconsSize}
-						color="pink"
-					/>
 
 				</div>
 

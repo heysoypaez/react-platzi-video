@@ -9,17 +9,19 @@
 		cursor: pointer;
 		width: 245px;
 		height: auto;
-		border: 1px dashed white;
+		box-shadow: 10px 10px 7px 10px gray ;
 		vertical-align: top;
 		display: inline-block;
 		margin: 2% 2% 2% 2%; 
+
+		border-radius: 5px;
 
 }
 
 .Media-new {
 
 	background-color: white;
-	border: 1px dashed red;
+	box-shadow: 0px 3px 7px 10px gray ;
 	color: black;
 
 }
