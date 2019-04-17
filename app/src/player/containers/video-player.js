@@ -1,36 +1,52 @@
 /*DESAFIO
 
-=> Llamar API de full screen en cada navegador
+=> [HECHO] Llamar API de full screen en cada navegador DONE
 
-OJO!
+	- Chrome DONE
+	- Mozzila Firefox
+	- Safari
+	- Edge
+	- Opera
+
+	Use una API global!!
+
+	OJO!
 
 BUGS por corregir
 =================
 
-1. Volumen genera error
-2. Boton de pausa no funcioan inicialmente
-3. Diseño de m fullscreen coloca video muy pequeño
+1. [HECHO] Boton de pausa no funcioan inicialmente
+
+ Tenemos dos problemas
+	1. Cuando hago el primer click el boton no hace pausa pero si cambia el estado del icono
+	2. Cuando hago el segundo click el boton si hace pausa pero coloca el icono incorrecto
+
+2. Volumen genera error
+3. [HECHO] Diseño de m fullscreen coloca video muy pequeño
 
 */
 
-import React , {Component} from "react";
 
-import VideoPlayerLayout from "../components/video-player-layout.js";
+//Imports
 
-import Video from "../components/video.js";
-import Title from "../components/title.js";
+	import React , {Component} from "react";
 
-import Controls from "../components/video-player-controls.js";
+	import VideoPlayerLayout from "../components/video-player-layout.js";
 
-//Controls
-import PlayPause  from "../components/play-pause.js";
-import Timer  from "../components/timer.js";
-import ProgressBar from "../components/progress-bar.js";
-import Spinner from "../components/spinner.js";
-import Volume from "../components/volume.js"
-import FullScreen from "../components/fullscreen.js"
+	import Video from "../components/video.js";
+	import Title from "../components/title.js";
 
-import formattedTime from "../../utilities/utilities.js"
+	import Controls from "../components/video-player-controls.js";
+
+	//Controls
+	import PlayPause  from "../components/play-pause.js";
+	import Timer  from "../components/timer.js";
+	import ProgressBar from "../components/progress-bar.js";
+	import Spinner from "../components/spinner.js";
+	import Volume from "../components/volume.js"
+	import FullScreen from "../components/fullscreen.js"
+
+	import formattedTime from "../../utilities/utilities.js"
 
 
 
@@ -61,118 +77,135 @@ class VideoPlayer  extends Component {
 		})
 	}
 
-	handleToggleClickPlayPause = event => {
 
-		this.setState({
-			pause: !this.state.pause
-		})
-	}	
+	
+	/*Video Handlers 
+	------------------*/
 
-	handleLoadedMetadata = event => {
+		handleLoadedMetadata = event => {
 
-		//Llamando a quien disparó el evento
-		this.video = event.target;
-
-		this.setState({
-
-			duration: this.video.duration,
-			durationFormatted: formattedTime(this.video.duration)
-		})
-	}
-
-	handleTimeUpdate = event => {
-
-		this.video = event.target;
-
-		this.setState({
-			currentTime: this.video.currentTime,
-			currentTimeFormatted: formattedTime( this.video.currentTime )
-		})
-	}
-
-	handleProgressChange = event => {
-
-		this.video.currentTime = event.target.value
-	}
-
-	//Video start loading
-	handleSeekingVideo = event => {
-
-		this.setState({
-			loading: true
-		})
-	}
-
-	// Video stop loading
-	handleSoughtdVideo = event => {
-
-
-		this.setState({
-			loading: false
-		})
-	}
-
-	handleVolumeChange = event => {
-
-		if (!this.state.volumeClicked) {
+			//Llamando a quien disparó el evento
+			this.video = event.target;
 
 			this.setState({
-			volume: event.target.value,
+
+				duration: this.video.duration,
+				durationFormatted: formattedTime(this.video.duration)
 			})
+		}		
 
-			this.video.volume = this.state.volume;
-		}
-	}
-
-	handleClickVolume = event => {
-
-
-		const MUTED = 0;
-
-		
-		if(!this.state.volumeClicked) {
-		
-			this.setState({
-				volumeClicked: !this.state.volumeClicked,
-				volumeLast: this.state.volume,
-				volume: MUTED
-			})
-
-			this.video.volume = this.state.volume;
-		}
-
-		else {
+		//Video start loading
+		handleSeekingVideo = event => {
 
 			this.setState({
-				volumeClicked: !this.state.volumeClicked,
-				volume: this.video.volumeLast
+				loading: true
 			})
-
-			this.video.volume = this.state.volume;
 		}
-	}
 
-	handleClickFullScreen = event => {
-			
+		// Video stop loading
+		handleSoughtVideo = event => {
 
-			if(!document.webkitIsFullScreen) {
 
-				//mando a FullScreen
-				this.player.webkitRequestFullscreen();
-			} 
+			this.setState({
+				loading: false
+			})
+		}
+	
+	/*Controls Handlers
+	---------------------*/
 
-			else {
+		// PlayPause 
+			handleToggleClickPlayPause = event => {
 
-				//salgo de fullscreen
-				document.webkitExitFullscreen();
+				this.setState({
+					pause: !this.state.pause
+				})
+			}	
 
+		// Timer 
+			handleTimeUpdate = event => {
+
+				this.video = event.target;
+
+				this.setState({
+					currentTime: this.video.currentTime,
+					currentTimeFormatted: formattedTime( this.video.currentTime )
+				})
+			}
+		 
+		// ProgressBar
+			handleProgressChange = event => {
+
+				this.video.currentTime = event.target.value
 			}
 
-	} 	
+		// Volume 		
+			handleVolumeChange = event => {
 
-	setRef = element => {
-		this.player = element;
-	}
+				if (!this.state.volumeClicked) {
+
+					this.setState({
+					volume: event.target.value,
+					})
+
+					this.video.volume = this.state.volume;
+				}
+			}
+
+			handleClickVolume = event => {
+
+
+				const MUTED = 0;
+
+				
+				if(!this.state.volumeClicked) {
+				
+					this.setState({
+						volumeClicked: !this.state.volumeClicked,
+						volumeLast: this.state.volume,
+						volume: MUTED
+					})
+
+					this.video.volume = this.state.volume;
+				}
+
+				else {
+
+					this.setState({
+						volumeClicked: !this.state.volumeClicked,
+						volume: this.video.volumeLast
+					})
+
+					this.video.volume = this.state.volume;
+				}
+			}
+
+		// FullScreen 
+			handleClickFullScreen = event => {
+			
+					function isInFullscreen() {
+					  if (document.fullscreenElement) {
+					    return true;
+					  }
+					 
+					  	return false;	
+					  
+					}
+
+					if( !isInFullscreen() ) {
+						this.player.requestFullscreen()
+					}
+					else {
+						document.exitFullscreen()
+					}
+			} 	
+
+
+		/*Utilities
+		-------------*/
+			setRef = element => {
+				this.player = element;
+			}
 
 	render() {
 
@@ -185,7 +218,7 @@ class VideoPlayer  extends Component {
 				<Video 
 					autoplay = {this.props.autoplay}
 					src= {this.props.src}
-					pause= {this.state.pause}
+					pause= {!this.state.pause}
 					handleLoadedMetadata = {this.handleLoadedMetadata}
 					handleTimeUpdate = {this.handleTimeUpdate}
 					handleSeeking = {this.handleSeekingVideo}
@@ -195,8 +228,9 @@ class VideoPlayer  extends Component {
 				<Controls>
 
 					<PlayPause 
+					  pause = {this.state.pause}
 						handleClick = {this.handleToggleClickPlayPause}
-						pause = {this.state.pause}
+						
 					/>
 
 					<Timer 
@@ -224,10 +258,8 @@ class VideoPlayer  extends Component {
 				</Controls>
 
 				<Spinner 
-
 					active={this.state.loading}
 				/>
-
 
 			</VideoPlayerLayout>
 		)

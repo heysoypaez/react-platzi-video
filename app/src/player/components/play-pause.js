@@ -12,21 +12,17 @@ function PlayPause(props) {
 	return(
 
 		<div className="PlayPause">
-			
+
+			<button onClick={props.handleClick} >	
 			{
 				props.pause ?
 
-			<button onClick={props.handleClick} >
 				<Play size={IconsSize} color="pink" />
-			</button>
-
 				:
-
-			<button onClick={props.handleClick} >
 				<Pause size={IconsSize} color="pink" />	  
-			</button>
+			
 			}
-
+			</button>
 		
 
 		</div>
