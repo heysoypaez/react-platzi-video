@@ -1,3 +1,18 @@
+/*DESAFIO
+
+=> Llamar API de full screen en cada navegador
+
+OJO!
+
+BUGS por corregir
+=================
+
+1. Volumen genera error
+2. Boton de pausa no funcioan inicialmente
+3. Diseño de m fullscreen coloca video muy pequeño
+
+*/
+
 import React , {Component} from "react";
 
 import VideoPlayerLayout from "../components/video-player-layout.js";
@@ -13,6 +28,7 @@ import Timer  from "../components/timer.js";
 import ProgressBar from "../components/progress-bar.js";
 import Spinner from "../components/spinner.js";
 import Volume from "../components/volume.js"
+import FullScreen from "../components/fullscreen.js"
 
 import formattedTime from "../../utilities/utilities.js"
 
@@ -136,16 +152,39 @@ class VideoPlayer  extends Component {
 		}
 	}
 
+	handleClickFullScreen = event => {
+			
+
+			if(!document.webkitIsFullScreen) {
+
+				//mando a FullScreen
+				this.player.webkitRequestFullscreen();
+			} 
+
+			else {
+
+				//salgo de fullscreen
+				document.webkitExitFullscreen();
+
+			}
+
+	} 	
+
+	setRef = element => {
+		this.player = element;
+	}
+
 	render() {
 
 		return(
-			<VideoPlayerLayout>
+			<VideoPlayerLayout
+				setRef={this.setRef}
+			>
 				<Title title="Crea cambio relevante" />
 
 				<Video 
 					autoplay = {this.props.autoplay}
-					src= "file:///C:/Users/Daniel/Videos/video-prueba.webm"
-						 //"http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4"
+					src= "http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4"
 					pause= {this.state.pause}
 					handleLoadedMetadata = {this.handleLoadedMetadata}
 					handleTimeUpdate = {this.handleTimeUpdate}
@@ -176,6 +215,10 @@ class VideoPlayer  extends Component {
 						handleChange={this.handleVolumeChange}
 						handleClick={this.handleClickVolume}
 						value={this.state.volume}
+					/>
+
+					<FullScreen 
+						handleClick={this.handleClickFullScreen}
 					/>
 
 				</Controls>

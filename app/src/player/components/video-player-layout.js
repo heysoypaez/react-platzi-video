@@ -3,7 +3,10 @@ import "./video-player-layout.css";
 
 const VideoPlayerLayout = (props)  => (
 
-			<section className="VideoPlayer">
+			<section 
+				className="VideoPlayer"
+				ref={props.setRef }
+			>
 
 				{props.children}
 			</section>
@@ -12,3 +15,6 @@ const VideoPlayerLayout = (props)  => (
 
 
 export default VideoPlayerLayout;
+
+
+//Set ref me permite hacer referencia al elemnto que encapsula a mi player
