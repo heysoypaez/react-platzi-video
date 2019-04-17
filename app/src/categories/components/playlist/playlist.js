@@ -26,7 +26,7 @@
 							return (
 
 							 <Media
-							 	 handleClick={props.handleOpenModal}
+							 	 openModal={props.handleOpenModal}
 								 {...item /*iterando props sobre playlist*/}
 								 key={item.id}
 							

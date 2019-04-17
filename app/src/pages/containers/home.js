@@ -22,17 +22,21 @@ class Home extends Component {
 		handleError: false,
 	}
 
-	handleOpenModal = (event) => {
+	handleOpenModal = (media) => {
 		
 		this.setState({
 			modalVisible: true,
+			media
 		})		
 	}
 
-	handleCloseModal = (event) => {
+
+	//Reibe las props de media por parametro
+	handleCloseModal = (media) => {
 
 		this.setState({
 			modalVisible: false,
+			media
 		})
 	}
 
@@ -59,6 +63,8 @@ class Home extends Component {
 						>
 							<VideoPlayer
 								autoplay= {true}
+								src={this.state.media.src}
+								title={this.state.media.title}
 							 />
 				
 						</ModalLayout> 			

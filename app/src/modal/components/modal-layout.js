@@ -7,8 +7,9 @@ function ModalLayout(props) {
 
 		<section className="Modal">
 
-		<button className="Modal-close" onClick={props.handleClick}>X</button>
-		{props.children}
+			{props.children}
+			<button className="Modal-close" onClick={props.handleClick}>X</button>
+			
 		</section>
 
 	)

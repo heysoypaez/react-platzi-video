@@ -41,8 +41,18 @@
 			})
 		}
 
+
+		openModal = (event) => {
+			
+
+			this.props.openModal(this.props)
+
+		}
+
 		
 		 render() {
+
+
 
 			
 			/*PROPS DE MI COMPONENTE
@@ -59,7 +69,7 @@
 		/*ESO ES JSX*/
 			return (
 			<div className={`Media ${this.props.new}`} 
-				 onClick={this.props.handleClick}
+				 onClick={this.openModal}
 				 onMouseEnter={this.handleMouseEnter}
 				 onMouseLeave={this.handleMouseLeave}
 				 	 

@@ -180,11 +180,11 @@ class VideoPlayer  extends Component {
 			<VideoPlayerLayout
 				setRef={this.setRef}
 			>
-				<Title title="Crea cambio relevante" />
+				<Title title={this.props.title} />
 
 				<Video 
 					autoplay = {this.props.autoplay}
-					src= "http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4"
+					src= {this.props.src}
 					pause= {this.state.pause}
 					handleLoadedMetadata = {this.handleLoadedMetadata}
 					handleTimeUpdate = {this.handleTimeUpdate}

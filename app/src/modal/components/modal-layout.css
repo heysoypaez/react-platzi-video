@@ -4,24 +4,32 @@
 
 	position: fixed;
 
-	top: 20vh;
-	bottom: 20vh;
+	top: 10vh;
 	left:20vw;
-	right: 20vw;
+
 
 	padding: 5%;
 	background-color: white;
 
-	border: solid black 1px;
+	border-radius: 30px;
+
+	box-shadow: 0px 6px 10px 10px gray ;
+
 	text-align: center;
 	justify-content: center;
 	vertical-align: top;
 
 	display: grid;
 
+	height: 400px;
+
+
 }
 
 .Modal-close {
 	background-color: red;
 	color: white;
+	cursor: pointer;
+	width: 30px;
+	border: 0;
 }

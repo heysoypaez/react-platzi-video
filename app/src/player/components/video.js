@@ -58,7 +58,7 @@ class Video  extends PureComponent {
 
 			<section className="Video">
 			
-				<video
+				<video className="Video-content"
 				 ref={this.setRef}
 				 autoPlay = {this.props.autoplay}
 				 src={this.props.src}
