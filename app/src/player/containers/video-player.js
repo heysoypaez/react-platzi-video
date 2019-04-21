@@ -22,6 +22,16 @@ BUGS por corregir
 	2. Cuando hago el segundo click el boton si hace pausa pero coloca el icono incorrecto
 
 2. Volumen genera error
+	
+	Estos son los hechos
+	1. Cuando hago un click no hace nada
+	2. Cuando hago un click funciona, lo pone en mute 
+	3. Cuando hago el segundo click (cual deberia invertir el estado) deja de funcionar
+
+	Ademas
+
+	Cuando muevo la barrita de volumen esta automaticamente se coloca en 0
+
 3. [HECHO] Diseño de m fullscreen coloca video muy pequeño
 
 */
@@ -66,7 +76,7 @@ class VideoPlayer  extends Component {
 
 		volumeClicked: false,
 		volumeLast: 0,
-		volume: 1
+		volume: 0.7
 	}	
 
 
@@ -139,7 +149,8 @@ class VideoPlayer  extends Component {
 				this.video.currentTime = event.target.value
 			}
 
-		// Volume 		
+		// Volume 
+
 			handleVolumeChange = event => {
 
 				if (!this.state.volumeClicked) {
@@ -153,13 +164,11 @@ class VideoPlayer  extends Component {
 			}
 
 			handleClickVolume = event => {
-
-
-				const MUTED = 0;
-
 				
 				if(!this.state.volumeClicked) {
-				
+						
+					const MUTED = 0;
+
 					this.setState({
 						volumeClicked: !this.state.volumeClicked,
 						volumeLast: this.state.volume,
@@ -205,6 +214,7 @@ class VideoPlayer  extends Component {
 		-------------*/
 			setRef = element => {
 				this.player = element;
+				this.video = element;
 			}
 
 	render() {
@@ -223,6 +233,8 @@ class VideoPlayer  extends Component {
 					handleTimeUpdate = {this.handleTimeUpdate}
 					handleSeeking = {this.handleSeekingVideo}
 					handleSought = {this.handleSoughtVideo}
+
+					setRef={this.setRef}
 				/>
 
 				<Controls>
