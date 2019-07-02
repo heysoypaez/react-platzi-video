@@ -1,62 +1,21 @@
-/*DESAFIO
+import React , {Component} from "react";
 
-=> [HECHO] Llamar API de full screen en cada navegador DONE
+import VideoPlayerLayout from "../components/video-player-layout.js";
 
-	- Chrome DONE
-	- Mozzila Firefox
-	- Safari
-	- Edge
-	- Opera
+import Video from "../components/video.js";
+import Title from "../components/title.js";
 
-	Use una API global!!
+import Controls from "../components/video-player-controls.js";
 
-	OJO!
+//Controls
+import PlayPause  from "../components/play-pause.js";
+import Timer  from "../components/timer.js";
+import ProgressBar from "../components/progress-bar.js";
+import Spinner from "../components/spinner.js";
+import Volume from "../components/volume.js"
+import FullScreen from "../components/fullscreen.js"
 
-BUGS por corregir
-=================
-
-1. [HECHO] Boton de pausa no funcioan inicialmente
-
- Tenemos dos problemas
-	1. Cuando hago el primer click el boton no hace pausa pero si cambia el estado del icono
-	2. Cuando hago el segundo click el boton si hace pausa pero coloca el icono incorrecto
-
-2. Volumen genera error
-	
-	Estos son los hechos
-	1. Cuando hago un click no hace nada
-	2. Cuando hago un click funciona, lo pone en mute 
-	3. Cuando hago el segundo click (cual deberia invertir el estado) deja de funcionar
-
-	Ademas
-
-	Cuando muevo la barrita de volumen esta automaticamente se coloca en 0
-
-3. [HECHO] Diseño de m fullscreen coloca video muy pequeño
-
-*/
-
-
-//Imports
-
-	import React , {Component} from "react";
-
-	import VideoPlayerLayout from "../components/video-player-layout.js";
-
-	import Video from "../components/video.js";
-	import Title from "../components/title.js";
-
-	import Controls from "../components/video-player-controls.js";
-
-	//Controls
-	import PlayPause  from "../components/play-pause.js";
-	import Timer  from "../components/timer.js";
-	import ProgressBar from "../components/progress-bar.js";
-	import Spinner from "../components/spinner.js";
-	import Volume from "../components/volume.js"
-	import FullScreen from "../components/fullscreen.js"
-
-	import formattedTime from "../../utilities/utilities.js"
+import formattedTime from "../../utilities/utilities.js"
 
 
 
@@ -79,7 +38,6 @@ class VideoPlayer  extends Component {
 		volume: 0.7
 	}	
 
-
 	componentDidMount() {
 		this.setState({
 
@@ -94,7 +52,6 @@ class VideoPlayer  extends Component {
 
 		handleLoadedMetadata = event => {
 
-			//Llamando a quien disparó el evento
 			this.video = event.target;
 
 			this.setState({
@@ -114,7 +71,6 @@ class VideoPlayer  extends Component {
 
 		// Video stop loading
 		handleSoughtVideo = event => {
-
 
 			this.setState({
 				loading: false
@@ -229,6 +185,7 @@ class VideoPlayer  extends Component {
 					autoplay = {this.props.autoplay}
 					src= {this.props.src}
 					pause= {!this.state.pause}
+
 					handleLoadedMetadata = {this.handleLoadedMetadata}
 					handleTimeUpdate = {this.handleTimeUpdate}
 					handleSeeking = {this.handleSeekingVideo}
@@ -242,7 +199,6 @@ class VideoPlayer  extends Component {
 					<PlayPause 
 					  pause = {this.state.pause}
 						handleClick = {this.handleToggleClickPlayPause}
-						
 					/>
 
 					<Timer 
@@ -257,7 +213,6 @@ class VideoPlayer  extends Component {
 					/>
 
 					<Volume 
-
 						handleChange={this.handleVolumeChange}
 						handleClick={this.handleClickVolume}
 						value={this.state.volume}
@@ -266,7 +221,6 @@ class VideoPlayer  extends Component {
 					<FullScreen 
 						handleClick={this.handleClickFullScreen}
 					/>
-
 				</Controls>
 
 				<Spinner 

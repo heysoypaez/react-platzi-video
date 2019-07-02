@@ -1,11 +1,10 @@
 import React , {Component} from "react";
 import SearcherLayout from "../components/searcher-layout.js"
 
-
 class Searcher extends Component {
 
 	state = {
-		value: "Luis Fonsi soy"
+		value: ""
 	}
 
 	handleSubmit = (event) => {
@@ -14,6 +13,7 @@ class Searcher extends Component {
 	}
 
 	setInputRef = ($element) => {
+
 		this.input = $element;
 	}
 
@@ -38,7 +38,3 @@ class Searcher extends Component {
 }
 
 export default Searcher;
-
-/*
-Este componente manejara su propio estado
-*/

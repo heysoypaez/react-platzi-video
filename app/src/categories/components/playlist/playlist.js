@@ -1,50 +1,32 @@
+import React from "react";
+import Media from "./components/media.js";
+import "./playlist.css";
 
-	//Elige tus batallas, Si no hace falta un ciclo de vida usa un componente funcional
+const Playlist = (props) => (
 
-/*Imports
-===========*/
-	import React from "react";
-	import PropTypes from "prop-types";
-	import Media from "./components/media.js";
-	import "./playlist.css"
+	<div className="Playlist">
 
+		<section className="Playlist-content">
+			
+			{
+			props.playlist.map( item => (
 
-/*Functional component
-=======================*/
+				 <Media
+				 	 {...item}
+				 	 openModal={props.handleOpenModal}
+					 key={item.id}
+				 />
+			))
+			}
 
-	function Playlist(props) {
-			                               
+			<Media 
+			title="Agrega tu nueva Media a la lista"
+			new= "Media-new"
+			cover="./images/covers/question-mark.png"
+			author="Tú"
+			/>
+		</section>
+	</div>
+)
 
-			return(
-				<div className="Playlist">
-
-
-					<section className="Playlist-content">
-						
-						{
-						props.playlist.map( item => {
-							return (
-
-							 <Media
-							 	 openModal={props.handleOpenModal}
-								 {...item /*iterando props sobre playlist*/}
-								 key={item.id}
-							
-							  />
-							   )
-						})
-						}
-
-						<Media 
-						title="Agrega tu nueva Media a la lista"
-						new= "Media-new"
-						cover="./images/covers/question-mark.png"
-						author="Tú"
-						/>
-
-					</section>
-				</div>
-			)
-	}
-
-	export default Playlist
+export default Playlist;

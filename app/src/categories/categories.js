@@ -1,50 +1,35 @@
+import React from "react";
+import Searcher from "../widgets/containers/searcher.js"
 
-	import React from "react";
-	import PropTypes from "prop-types";
-	import Playlist from "./components/playlist/playlist.js";
-	import Searcher from "../widgets/containers/searcher.js"
+import "./categories.css";
+import Category from "./category.js";
 	
-	//Styles
-	import "./categories.css";
-	import Category from "./category.js";
 
+const Categories = (props) => (
 
-
-
-function Categories(props) {
-
-	return(
-
-		<div className="Categories">
+	<div className="Categories">
 
 		<header className="Categories-header">
-			<h1> Vive la música, es parte de lo genial de tu vida </h1>
+			<h1> Vive la música, es parte de lo genial en tu vida </h1>
 		</header>
 
 		<section className="Categories-section">
 
-			<Searcher />
-			
+			<Searcher />		
 			{ 
-				props.categories.map( item => { 
-
-					return (
+				props.categories.map( item => (
 
 						<Category 
 							handleOpenModal={props.handleOpenModal}
 							key={item.id}
 							{...item}		
 						/>
-					)
-				})
+				))
 			}
-
 			<Searcher />
 		</section>
-		</div>
-
-		) 
-}
+	</div>
+) 
 
 
-export default Categories
+export default Categories;

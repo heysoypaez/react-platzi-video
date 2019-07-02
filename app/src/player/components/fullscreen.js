@@ -1,8 +1,6 @@
 import React from "react";
 import FullScreenIcon from "../../icons/components/children/full-screen.js";
-
 import "./fullscreen.css";
-
 
 const FullScreen = (props) => (
 

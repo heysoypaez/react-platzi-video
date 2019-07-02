@@ -10,9 +10,7 @@ function ProgressBar(props) {
 				min={0}
 				max={props.duration}
 				value={props.value}
-
 				onChange={props.handleProgressChange}
-
 			/>
 		</section>
 	)

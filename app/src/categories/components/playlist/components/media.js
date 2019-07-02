@@ -3,13 +3,12 @@
 	import PropTypes from "prop-types";
 	import "./media.css"
 
-	
 
-	//Estoy creando un componente chiquito que llamaremos media
 	class Media extends PureComponent {
 
 		constructor(props) {
-			super(props) //recibiendo propiedades
+			super(props) 
+
 			this.state = {
 
 				 ticket: props.ticket,
@@ -18,17 +17,13 @@
 			}
 
 			this.IconsSize = 30;
-
 		}
-
 
 		handleMouseEnter = (event) => {
 
-			//alert("Oh God, you push your hand hover me")
 			this.setState({
 				cover: "media-cover-hover",
 				cta: "¿Quieres ver esta peli ahora?",
-
 			})
 		}
 
@@ -37,45 +32,33 @@
 			this.setState({
 				cover: " ",
 				cta: " ",
-
 			})
 		}
 
-
 		openModal = (event) => {
 			
-
 			this.props.openModal(this.props)
-
 		}
 
-		
-		 render() {
+		render() {
 
-
-
-			
-			/*PROPS DE MI COMPONENTE
-			=========================*/
 			const {
 				cover, 
 				title, 
 				author
 			} = this.props;
 
-			const {IconsSize} = this;
 
-
-		/*ESO ES JSX*/
 			return (
-			<div className={`Media ${this.props.new}`} 
-				 onClick={this.openModal}
-				 onMouseEnter={this.handleMouseEnter}
-				 onMouseLeave={this.handleMouseLeave}
-				 	 
+
+			<div 
+			 className={`Media ${this.props.new}`} 
+			 onClick={this.openModal}
+			 onMouseEnter={this.handleMouseEnter}
+			 onMouseLeave={this.handleMouseLeave}
 			>
 
-				<div className="Media-cover" className={this.state.cover}>
+				<div className={`${this.state.cover}`}>
 					<div> 
 						<img src= {cover}
 							 alt="cover-playlist" 
@@ -95,8 +78,6 @@
 			</div>
 				)
 		} 
-		//adentro contendra el html, la figura, el ui
-
 	}
 
 Media.propTypes = {
@@ -107,4 +88,3 @@ Media.propTypes = {
 }
 
 export default Media;
-

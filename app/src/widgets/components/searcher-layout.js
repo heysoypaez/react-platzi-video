@@ -17,8 +17,6 @@ const SearcherLayout = (props) => (
 			 name="search"
 			 onChange={props.handleChange}
 			 value={props.value}
-
-
 			/>
 			
 		</form>
@@ -26,6 +24,3 @@ const SearcherLayout = (props) => (
 )
 
 export default SearcherLayout;
-
-
-/*Tambien puedo declarar componentes funcionales con arrow functions */
